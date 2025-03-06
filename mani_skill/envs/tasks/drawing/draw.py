@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Union
 
 import numpy as np
 import sapien
@@ -6,6 +6,7 @@ import torch
 from transforms3d.euler import euler2quat
 
 from mani_skill.agents.robots.panda.panda_stick import PandaStick
+from mani_skill.agents.robots.widowxai.tatbot import Tatbot
 from mani_skill.envs.sapien_env import BaseEnv
 from mani_skill.sensors.camera import CameraConfig
 from mani_skill.utils import sapien_utils
@@ -51,8 +52,8 @@ class TableTopFreeDrawEnv(BaseEnv):
 
     SUPPORTED_REWARD_MODES = ["none"]
 
-    SUPPORTED_ROBOTS: ["panda_stick"]
-    agent: PandaStick
+    SUPPORTED_ROBOTS = ["panda_stick", "tatbot"]
+    agent: Union[PandaStick, Tatbot]
 
     def __init__(self, *args, robot_uids="panda_stick", **kwargs):
         super().__init__(*args, robot_uids=robot_uids, **kwargs)

@@ -1,5 +1,5 @@
 import math
-from typing import Dict
+from typing import Dict, Union
 
 import numpy as np
 import sapien
@@ -8,6 +8,7 @@ from transforms3d.euler import euler2quat
 
 import mani_skill.envs.utils.randomization as randomization
 from mani_skill.agents.robots.panda.panda_stick import PandaStick
+from mani_skill.agents.robots.widowxai.tatbot import Tatbot
 from mani_skill.envs.sapien_env import BaseEnv
 from mani_skill.sensors.camera import CameraConfig
 from mani_skill.utils import sapien_utils
@@ -52,8 +53,8 @@ class DrawTriangleEnv(BaseEnv):
 
     SUPPORTED_REWARD_MODES = ["sparse"]
 
-    SUPPORTED_ROBOTS: ["panda_stick"]  # type: ignore
-    agent: PandaStick
+    SUPPORTED_ROBOTS: ["panda_stick", "tatbot"]  # type: ignore
+    agent: Union[PandaStick, Tatbot]
 
     def __init__(self, *args, robot_uids="panda_stick", **kwargs):
         super().__init__(*args, robot_uids=robot_uids, **kwargs)
