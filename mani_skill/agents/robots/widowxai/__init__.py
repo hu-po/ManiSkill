@@ -1,2 +1,3 @@
 from .widowxai import WidowXAI
-from .tatbot import Tatbot
+from .widowxai_cam import WidowXAICam
+from .widowxai_draw import WidowXAIDraw

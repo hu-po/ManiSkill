@@ -5,7 +5,7 @@ import numpy as np
 import sapien
 import torch
 from mani_skill.agents.robots.panda.panda_stick import PandaStick
-from mani_skill.agents.robots.widowxai.tatbot import Tatbot
+from mani_skill.agents.robots.widowxai.widowxai_draw import WidowXAIDraw
 from mani_skill.envs.sapien_env import BaseEnv
 from mani_skill.sensors.camera import CameraConfig
 from mani_skill.utils import sapien_utils
@@ -52,8 +52,8 @@ class DrawSVGEnv(BaseEnv):
 
     SUPPORTED_REWARD_MODES = ["sparse"]
 
-    SUPPORTED_ROBOTS: ["panda_stick", "tatbot"]  # type: ignore
-    agent: Union[PandaStick, Tatbot]
+    SUPPORTED_ROBOTS: ["panda_stick", "widowxai_draw"]  # type: ignore
+    agent: Union[PandaStick, WidowXAIDraw]
 
     def __init__(self, *args, svg=None, robot_uids="panda_stick", **kwargs):
 

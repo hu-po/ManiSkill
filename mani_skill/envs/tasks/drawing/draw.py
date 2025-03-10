@@ -6,7 +6,7 @@ import torch
 from transforms3d.euler import euler2quat
 
 from mani_skill.agents.robots.panda.panda_stick import PandaStick
-from mani_skill.agents.robots.widowxai.tatbot import Tatbot
+from mani_skill.agents.robots.widowxai.widowxai_draw import WidowXAIDraw
 from mani_skill.envs.sapien_env import BaseEnv
 from mani_skill.sensors.camera import CameraConfig
 from mani_skill.utils import sapien_utils
@@ -52,8 +52,8 @@ class TableTopFreeDrawEnv(BaseEnv):
 
     SUPPORTED_REWARD_MODES = ["none"]
 
-    SUPPORTED_ROBOTS = ["panda_stick", "tatbot"]
-    agent: Union[PandaStick, Tatbot]
+    SUPPORTED_ROBOTS = ["panda_stick", "widowxai_draw"]
+    agent: Union[PandaStick, WidowXAIDraw]
 
     def __init__(self, *args, robot_uids="panda_stick", **kwargs):
         super().__init__(*args, robot_uids=robot_uids, **kwargs)
