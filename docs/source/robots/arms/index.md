@@ -44,4 +44,9 @@ Agent Class Code: [https://github.com/haosulab/ManiSkill/blob/main/mani_skill/ag
 
 Robot Description: [https://github.com/hu-po/ManiSkill-WidowXAI](https://github.com/hu-po/ManiSkill-WidowXAI)
 
+### With Wrist Camera
 
+```{figure} ../images/widowxai.png
+```
+
+Robot UID: `widowxai_cam`
